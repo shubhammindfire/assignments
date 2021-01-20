@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drag API</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            #drop-location{
+                padding: 20px;
+                border: 2px solid black;
+                width: 350px;
+                height: 70px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button name="getgeo" onclick="getgeo()">Get geolocation</button><br>
+        <p id="geo"></p><br><br>
+
+        <a id="link" href="https://www.google.com/maps" draggable="true" ondragstart="drag(event)">Google maps</a>
+        <br><br>
+
+        <div id="drop-location" ondrop="drop(event)" ondragover="allowDrop(event)">
+        </div>
+
+        <script>
+            function getgeo(){
+                var geo=document.getElementById("geo");
+
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(storepos);
+                }
+                else{
+                    geo.innerHTML = "NO brower support for Geo-location";
+                }
+            }
+            function storepos(position){
+                if(typeof(Storage) !== undefined){
+                    localStorage.setItem("lat",position.coords.latitude);
+                    localStorage.setItem("long",position.coords.longitude);
+                
+                    geo.innerHTML = "Lat = " + localStorage.getItem('lat') + " Long = " + localStorage.getItem('long');
+                }
+                else{
+                    geo.innerHTML = "NO browser support for Local Storage";
+                }
+            }
+
+            function drag(event){
+                event.dataTransfer.setData("text/uri-list",event.target.id);
+            }
+
+            function allowDrop(event){
+                event.preventDefault();
+            }
+
+            function drop(event){
+                event.preventDefault();
+
+                var url = document.getElementById("link").href;
+
+                var lat = localStorage.getItem('lat');
+                var long = localStorage.getItem('long');
+
+                if(lat!==null && long!== null)url += "?q=" + lat + "," + long;
+                console.log("url = " + url);
+
+                window.open(url,"_self");
+            }
+        </script>
+    </body>
+</html>
