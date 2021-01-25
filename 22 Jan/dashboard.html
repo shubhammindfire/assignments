@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dashboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+		<style>
+			body{
+				font-family: 'Poppins',sans-serif;
+				padding: 10px;
+				background-color: #f4f5f8;
+			}
+			.flex-heading{
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.text-row{
+				margin-top: 50px;
+				display: flex;
+				justify-content: space-between;
+				font-weight: bold;
+			}
+
+			.field-row{
+				display: flex;
+				justify-content: space-between;
+			}
+
+
+
+			/* table starts here*/
+			table{
+				border-collapse: collapse;
+				margin-bottom: 50px;
+			}
+			th,td{
+				text-align: center;
+				border: 2px solid #eeeeee;
+				padding: 10px;
+			}
+			tr:first-child th{
+				border-top: 0px;
+			}
+			tr:last-child td{
+				border-bottom: 0px;
+			}
+			tr td:first-child, tr th:first-child{
+				border-left: 0px;
+			}
+			tr td:last-child, tr th:last-child{
+				border-right: 0px;
+			}
+			
+
+
+
+			/* footer starts here*/
+			.btn{
+				height: 35px;
+				background-color: #393a3d;
+				color: #eeeeee;
+				border: 2px solid #eeeeee;
+				border-radius: 20px;
+				padding: 10px;
+				margin: 3px;
+				font-weight: bold;
+				font-size: 16px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.btn-green{
+				height: 35px;
+				background-color: #00bb44;
+				color: white;
+				border-radius: 20px;
+				border: none;
+				padding: 10px;
+				margin-right: 25px;
+				font-weight: bold;
+				font-size: 16px;
+				text-align: center;
+				cursor: pointer;
+			}
+
+			.vl {
+				border-left: 1px solid #eeeeee;
+				height: 100%;
+				margin-left: 10px;
+				margin-right: 10px;
+				padding: 5px 0px;
+			}
+
+			#footer{
+				width: 100%;
+				height: 50px;
+				position: fixed;
+				bottom: 0px;
+				left: 0px;
+				background-color: #393a3d;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flex-heading">
+			<div style="font-weight: bold;font-size: x-large;">
+				<i class="fas fa-history" style="font-size: x-large;color: grey;"></i>
+				Invoice
+			</div>
+			<div>
+				<i class="fas fa-cog" style="font-size: x-large;color: grey;padding-right: 10px;"></i>
+				<i class="far fa-question-circle" style="font-size: x-large;color: grey;padding-right: 5px;"></i>
+				<span style="color: grey;">Help</span>
+				<i class="fas fa-times" style="font-size: x-large;color: grey;padding-left: 15px;"></i>
+			</div>
+		</div>
+		
+
+
+		<div class="text-row">
+			<span>
+				<span>
+					<label for="customer" style="font-size: 14px;">Customer</label>
+					<i class="far fa-question-circle" style="font-size: 18px;color: grey;padding-right: 5px;margin-right: 110px;"></i>
+				</span>
+				<span>
+					<label for="customer-email" style="font-size: 14px;">Customer email</label>
+					<i class="far fa-question-circle" style="font-size: 18px;color: grey;padding-right: 5px;"></i>
+				</span>
+			</span>
+			<span style="font-size: 14px;color: grey;">
+				BALANCE DUE
+			</span>
+		</div>
+
+
+		<div class="field-row">
+			<span>
+				<input type="text" placeholder="Select a customer" style="line-height: 25px;border-radius: 4px;margin-right: 20px;margin-top: 5px;">
+				<input type="text" placeholder="Separate emails with comma" style="width: 250px;line-height: 25px;border-radius: 4px;margin-top: 5px;">
+			</span>
+			<span style="font-size: 50px;font-weight: bold;">$0.00</span>
+		</div>
+
+		<div style="display: flex;justify-content: space-between;width: 250px;margin-left: 210px;margin-top: -30px;">
+			<span>
+				<input type="checkbox" name="send-later" id="send-later">
+				<label for="send-later" style="font-size: 14px;">Send later</label>
+				<i class="far fa-question-circle" style="font-size: 18px;color: grey;padding-right: 5px;"></i>
+			</span>
+			<span style="color: #5984c9;font-size: 14px;">
+				Cc/Bcc
+			</span>
+		</div>
+
+
+
+
+		<div class="text-row">
+			<span>
+				<label for="billing-address" style="font-size: 14px;margin-right: 130px;">Billing address</label>
+				<span>
+					<label for="terms" style="font-size: 14px;">Terms</label>
+					<i class="far fa-question-circle" style="font-size: 18px;color: grey;padding-right: 30px;margin-right: 90px;"></i>
+				</span>
+				<label for="invoice-date" style="font-size: 14px;margin-right: 105px;">Invoice date</label>
+				<label for="due-date" style="font-size: 14px;">Due date</label>
+			</span>
+			<span style="font-size: 14px;margin-right: 80px;">
+				Location of sale
+			</span>
+		</div>
+
+
+		<div class="field-row">
+			<span>
+				<textarea style="float: left;margin-right: 10px;" name="billing-address" id="billing-address" cols="25" rows="5"></textarea>
+				<input type="text" placeholder="Net 30" style="float: left;line-height: 25px;border-radius: 4px;margin-right: 10px;margin-top: 5px;">
+				<input type="text" placeholder="01/21/2021" style="float: left;line-height: 25px;border-radius: 4px;margin-right: 10px;margin-top: 5px;">
+				<input type="text" placeholder="02/20/2021" style="float: left;line-height: 25px;border-radius: 4px;margin-top: 5px;">
+			</span>
+			<span>
+				<input type="text" placeholder="123 Sierra Way, San Pablo, CA" style="line-height: 25px;border-radius: 4px;margin-top: 5px;">
+			</span>
+		</div>
+		<span style="position: relative;color: #5984c9;font-size: 14px;margin-left: 430px;top: -40px;">
+			Create recurring invoice
+		</span>
+
+		<span style="position: relative;font-size: 14px;margin-left: -370px;top: -20px;">
+			<label for="crew" style="font-weight: bold;">Crew #</label><br>
+			<input type="text" style="margin-left: 230px;margin-top: 10px;line-height: 25px;border-radius: 4px;">
+		</span>
+
+		<div style="color: #5984c9;font-size: 16px;margin-top: -40px;">
+			+ Shipping information
+		</div>
+
+
+
+
+		<div style="width: 60%;margin-top: 30px;display: flex;justify-content: space-between;">
+			<span>
+				<label for="tags" style="font-size: 14px;font-weight: bold;">Tags</label>
+				<i class="far fa-question-circle" style="font-size: 18px;color: grey;padding-right: 30px;margin-right: 120px;"></i>
+			</span>
+			<span style="color: #5984c9;font-size: 14px;">
+				Manage tags
+			</span>
+		</div>
+
+		<input type="text" placeholder="Start typing to add a tag" style="width: 60%;line-height: 25px;border-radius: 4px;margin-right: 20px;margin-top: 5px;">
+
+
+
+		<!--Table starts here-->
+		<div style="margin-top: 30px;padding: 20px;background-color: white;">
+		<table style="width: 100%;background-color: white;margin-top: 20px;padding: 20px;">
+			<tr>
+				<th></th>
+				<th>#</th>
+				<th>
+					PRODUCT/SERVICE
+					<i class="far fa-question-circle" style="font-size: 18px;color: grey;"></i>
+				</th>
+				<th>DESCRIPTION</th>
+				<th>QTY</th>
+				<th>RATE</th>
+				<th>AMOUNT</th>
+				<th>TAX</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>
+					<i class="fas fa-ellipsis-h" style="font-size: 18px;color: grey;"></i>
+				</td>
+				<td>1</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>
+					<i class="fas fa-trash-alt" style="font-size: 18px;color: grey;"></i>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<i class="fas fa-ellipsis-h" style="font-size: 18px;color: grey;"></i>
+				</td>
+				<td>2</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>
+					<i class="fas fa-trash-alt" style="font-size: 18px;color: grey;"></i>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<i class="fas fa-ellipsis-h" style="font-size: 18px;color: grey;"></i>
+				</td>
+				<td>3</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>
+					<i class="fas fa-trash-alt" style="font-size: 18px;color: grey;"></i>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<i class="fas fa-ellipsis-h" style="font-size: 18px;color: grey;"></i>
+				</td>
+				<td>4</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>
+					<i class="fas fa-trash-alt" style="font-size: 18px;color: grey;"></i>
+				</td>
+			</tr>
+		</table>
+		</div>
+
+
+		<!-- Footer starts here-->
+		<div id="footer">
+			<div id="footer-left">
+				<input type="button" value="Cancel" class="btn">
+				<input type="button" value="Clear" class="btn">
+			</div>
+
+			<div id="footer-middle" style="color:#eeeeee;">
+				<span>Print or Preview</span>
+				<span class="vl"></span>
+				<span>Make recurring</span>
+				<span class="vl"></span>
+				<span>Customize</span>
+			</div>
+
+			<div id="footer-right">
+				<input type="button" value="Save" class="btn">
+				<input type="button" value="Save and send" class="btn-green">
+			</div>
+		</div>
+	</body>
+</html>

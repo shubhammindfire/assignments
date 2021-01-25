@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			body{
+				background-color: papayawhip;
+				font-family: sans-serif;
+			}
+			#card-head{
+				text-align: center;
+				font-family: sans-serif;
+				font-size: 25px;
+				position: relative;
+				bottom: 50px;
+			}
+			.text{
+				text-align: center;
+				font-family: sans-serif;
+				position: relative;
+				bottom: 20px;
+			}
+			#welcome{
+				color: blue;
+				font-weight: bold;
+				font-size: 18px;
+				margin: auto;
+			}
+			#signin{
+				color: grey;
+				font-size: medium;
+				font-size: 15px;
+				margin-top: 8px;
+			}
+
+			#username,#password{
+				width: 100%;
+				margin: 5px auto 15px auto;
+				padding: 8px;
+				line-height: 25px;
+				border-radius: 6px;
+			}
+
+
+			#forgot-password{
+				float: right;
+				font-size: 15px;
+				color: grey;
+				margin: 0px -20px 0px 0px;
+				padding: 0px;
+				cursor: pointer;
+			}
+
+			#rem-label{
+				font-size: 15px;
+				font-weight: bold;
+				color: grey;
+			}
+
+			#btnlogin{
+				margin-top: 15px;
+				float: right;
+				border-radius: 4px;
+				font-size: 15px;
+				padding: 8px;
+				width: 80px;
+				border: none;
+				color: white;
+				background-color: steelblue;
+				cursor: pointer;
+			}
+			
+			#card{
+				width: 30%;
+				padding: 0px 10px;
+				height: 60vh;
+				border-radius: 1%;
+				margin: auto;
+				transform: translate(0%, 30%);
+				background-color: white;
+				box-shadow: 1px 4px 8px 0px rgba(0,0,0,0.1);
+			}
+
+			@media screen and (max-width: 600px){
+				#card{
+					width: 90%;
+					height: 60vh;
+					transform: translate(0%,20%);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="card">
+			<p id="card-head"><b>Login</b>Portal</p>
+
+			<p class="text" id="welcome">Welcome Back !</p>
+			<p class="text" id="signin">Sign in to continue</p>
+
+			<div style="padding: 0px 30px;">
+				<form action="#">
+					<label for="username" style="font-weight: bold;">Username</label>
+					<input type="text" id="username" placeholder="Enter username">
+					<div>
+						<label for="password" style="font-weight: bold;">Password</label>
+						<p id="forgot-password">Forgot password?</p>
+					</div>
+					<input type="text" id="password" placeholder="Enter password">
+
+					<input type="checkbox" name="remember" id="remember">
+					<label for="remember" id="rem-label">Remember me</label><br>
+
+					<input type="submit" value="Log In" id="btnlogin"><br>
+
+					<p style="text-align: center;margin-top: 40px;font-size: 15px;">Don't have an account? <span style="color: steelblue;cursor: pointer;">Signup now</span></p>
+
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

@@ -6,23 +6,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <style>
+            html{
+                padding: 20px;
+                background: url("https://i.ytimg.com/vi/ZG4JQX4BO9A/maxresdefault.jpg") no-repeat center fixed;
+                background-size: cover;
+            }
+
             #drop-location{
                 padding: 20px;
-                border: 2px solid black;
-                width: 350px;
+                border: 2px dashed MediumSeaGreen;
+                border-radius: 5px;
+                width: 300px;
                 height: 70px;
+            }
+
+            #getgeo{
+                background-color: mediumseagreen;
+                color: white;
+                font-size: 18px;
+                font-weight: 600;
+                padding: 10px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
             }
         </style>
     </head>
 
     <body>
-        <button name="getgeo" onclick="getgeo()">Get geolocation</button><br>
+        <button id="getgeo" name="getgeo" onclick="getgeo()">Get your Geolocation</button><br>
         <p id="geo"></p><br><br>
 
         <a id="link" href="https://www.google.com/maps" draggable="true" ondragstart="drag(event)">Google maps</a>
-        <br><br>
+        <br><br><br>
 
         <div id="drop-location" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p style="text-align: center;">Drag n drop the URL here</p>
         </div>
 
         <script>
@@ -65,6 +84,7 @@
                 var long = localStorage.getItem('long');
 
                 if(lat!==null && long!== null)url += "?q=" + lat + "," + long;
+
                 console.log("url = " + url);
 
                 window.open(url,"_self");
