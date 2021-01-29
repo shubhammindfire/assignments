@@ -56,19 +56,40 @@
 		tr th:last-child {
 			border-right: 0px;
 		}
+
+		@media screen and (max-width: 480px) {
+			#footer-left,#footer-middle,#f-r-save,#help,#brand-icon {
+				display: none;
+			}
+
+			#billing{
+				width: 100%;
+			}
+
+			#footer{
+				justify-content: flex-end;
+			}
+		}
+
+		@media screen and (max-width: 850px){
+			#billing{
+				width: 100%;
+				display: block;
+			}
+		}
 	</style>
 </head>
 
 <body class="container-fluid p-3">
 	<div class="d-flex justify-content-between">
 		<div class="font-weight-bold" style="font-size: 2rem;">
-			<i class="fas fa-history" style="color: grey;"></i>
+			<i class="fas fa-history" id="brand-icon" style="color: grey;"></i>
 			Invoice
 		</div>
 		<div>
 			<i class="fas fa-cog" style="font-size: x-large;color: grey;padding-right: 10px;"></i>
 			<i class="far fa-question-circle" style="font-size: x-large;color: grey;padding-right: 5px;"></i>
-			<span class="text-secondary">Help</span>
+			<span class="text-secondary" id="help">Help</span>
 			<i class="fas fa-times" style="font-size: x-large;color: grey;padding-left: 15px;"></i>
 		</div>
 	</div>
@@ -279,25 +300,27 @@
 
 
 	<!-- Footer starts here-->
-	<div id="footer" class="fixed-bottom d-flex justify-content-between p-2" style="background-color: #393a3d;">
-		<div id="footer-left">
-			<button type="button" class="btn btn-outline-light rounded-pill">Cancel</button>
-			<button type="button" class="btn btn-outline-light rounded-pill">Clear</button>
-		</div>
+	<footer>
+		<div id="footer" class="fixed-bottom d-flex justify-content-md-between p-2" style="background-color: #393a3d;">
+			<div id="footer-left">
+				<button type="button" class="btn btn-outline-light rounded-pill">Cancel</button>
+				<button type="button" class="btn btn-outline-light rounded-pill">Clear</button>
+			</div>
 
-		<span id="footer-middle" class="my-auto" style="color:#eeeeee;">
-			<span>Print or Preview</span>
-			<span class="px-1 border-left"></span>
-			<span>Make recurring</span>
-			<span class="px-1 border-left"></span>
-			<span>Customize</span>
-		</span>
+			<span id="footer-middle" class="my-auto" style="color:#eeeeee;">
+				<span>Print or Preview</span>
+				<span class="px-1 border-left"></span>
+				<span>Make recurring</span>
+				<span class="px-1 border-left"></span>
+				<span>Customize</span>
+			</span>
 
-		<div id="footer-right">
-			<button type="button" class="btn btn-outline-light rounded-pill">Save</button>
-			<button type="button" class="btn btn-success rounded-pill">Save and send</button>
+			<div id="footer-right">
+				<button type="button" id="f-r-save" class="btn btn-outline-light rounded-pill">Save</button>
+				<button type="button" id="f-r-send" class="btn btn-success rounded-pill">Save and send</button>
+			</div>
 		</div>
-	</div>
+	</footer>
 </body>
 
 </html>
