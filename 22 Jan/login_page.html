@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Registration page</title>
+		<title>Login page</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
 		<style>
 			body{
-				background-color: #fdffdc;
+				background-color: #fffafa;
 				font-family: 'Source Sans Pro',sans-serif;
 			}
-
-			#register{
+			#card-head{
+				color: #7a6342;
+				text-align: center;
+				font-size: 25px;
+				position: relative;
+				bottom: 12%;
+			}
+			.text{
+				text-align: center;
+				position: relative;
+				bottom: 20px;
+			}
+			#welcome{
 				color: #685ce2;
 				font-weight: bold;
 				font-size: 18px;
-				text-align: center;
-				margin: auto;
-				padding-top: 8%;
+				margin: 0px auto auto auto;
 			}
-
-			#sub-head{
+			#signin{
 				color: grey;
 				font-size: medium;
 				font-size: 15px;
 				margin: 5px auto;
-				text-align: center;
 			}
 
-			.labels{
-				font-weight: bold;
-				color: #485057;
-			}
-
-			#email,#username,#password{
+			#username,#password{
 				width: 100%;
 				margin: 5px auto 15px auto;
 				padding: 8px;
@@ -50,13 +52,13 @@
 				cursor: pointer;
 			}
 
-			#terms-label{
+			#rem-label{
 				font-size: 15px;
 				font-weight: bold;
 				color: #485057;
 			}
 
-			#btnregister{
+			#btnlogin{
 				margin-top: 15px;
 				margin-right: -5%;
 				float: right;
@@ -73,7 +75,7 @@
 			#card{
 				width: 30%;
 				padding: 0px 10px;
-				height: 70vh;
+				height: 60vh;
 				border-radius: 1%;
 				margin: auto;
 				transform: translate(0%, 30%);
@@ -81,7 +83,7 @@
 				box-shadow: 1px 4px 8px 0px rgba(0,0,0,0.1);
 			}
 
-			@media screen and (max-width: 700px){
+			@media screen and (max-width: 600px){
 				#card{
 					width: 90%;
 					transform: translate(0%,20%);
@@ -91,26 +93,27 @@
 	</head>
 	<body>
 		<div id="card">
-			<p id="register">Register Account</p>
-			<p id="sub-head">Create your account in a single step</p>
+			<p id="card-head"><b>Login</b>Portal</p>
+
+			<p class="text" id="welcome">Welcome Back !</p>
+			<p class="text" id="signin">Sign in to continue</p>
 
 			<div style="padding: 0px 8%;">
 				<form action="#">
-					<label for="email" class="labels">Email</label>
-					<input type="text" id="email" placeholder="Enter email">
-					
-					<label for="username" class="labels">Username</label>
+					<label for="username" style="font-weight: bold;color: #485057;">Username</label>
 					<input type="text" id="username" placeholder="Enter username">
-
-					<label for="password" class="labels">Password</label>
+					<div>
+						<label for="password" style="font-weight: bold;color: #485057;">Password</label>
+						<p id="forgot-password">Forgot password?</p>
+					</div>
 					<input type="password" id="password" placeholder="Enter password">
 
-					<input type="checkbox" name="terms" id="terms">
-					<label for="terms" id="terms-label">I accept Terms and Conditions</label><br>
+					<input type="checkbox" name="remember" id="remember">
+					<label for="remember" id="rem-label">Remember me</label><br>
 
-					<input type="submit" value="Register" id="btnregister"><br>
+					<input type="submit" value="Log In" id="btnlogin"><br>
 
-					<p style="text-align: center;margin-top: 12%;font-size: 15px;">Already have an account? <span style="color: steelblue;cursor: pointer;font-weight: bold;">Login</span></p>
+					<p style="text-align: center;margin-top: 12%;font-size: 15px;">Don't have an account? <span style="color: steelblue;cursor: pointer;font-weight: bold;">Signup now</span></p>
 
 				</form>
 			</div>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Resume</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+		<style>
+			html{
+				background-color: #444444;;
+			}
+			body{
+				background-color: black;
+				padding: 2%;
+				font-family: 'Source Sans Pro',sans-serif;
+				width: 60%;
+				margin: auto;
+			}
+			.grid-container{
+				display: grid;
+				padding: 2%;
+				border-radius: 10px;
+				border: none;
+				grid-template-columns: 35% auto;
+				background-color: white;
+			}
+
+			.grid-item{
+				padding: 2%;
+				border: 2px solid black;
+			}
+
+			#name{
+				font-size: 4vw;
+			}
+
+			#contact{
+				margin-top: 2.25%;
+				text-align: end;
+				font-size: 1.6vw;
+			}
+
+			#skills{
+				padding-top: 15%;
+				font-size: 1.4vw;
+				grid-row-start: 2;
+				grid-row-end: 4;
+			}
+
+			#objective{
+				padding-top: 8%;
+				font-size: 1.4vw;
+			}
+
+			#experience,#education,#projects,#interests{
+				font-size: 1.4vw;
+			}
+
+			#projects{
+				grid-row: span 2;
+			}
+			
+			#interests{
+				grid-row-start: 5;
+				grid-row-end: 6;
+			}
+
+			@media screen and (max-width: 480px){
+				body{
+					width: 80%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid-container">
+			<div class="grid-item">
+				<div id="name">
+					SHUBHAM KUMAR
+				</div>
+			</div>
+			<div class="grid-item">
+				<div id="contact">
+					+917327077740
+					<i class="fas fa-phone-alt" style="font-size: 1.5vw;margin-left: 10px;"></i><br>
+					shubhamkumar5772@gmail.com
+					<i class="fas fa-at" style="font-size: 1.5vw;margin-left: 10px;"></i><br>
+					linkedin.com/in/shubhamkumar-l/
+					<i class="fab fa-linkedin" style="font-size: 1.5vw;margin-left: 10px;"></i><br>
+					https://github.com/varamsky
+					<i class="fab fa-github" style="font-size: 1.5vw;margin-left: 10px;"></i><br>
+				</div>
+			</div>
+			<div class="grid-item" id="skills">
+				<span style="font-size: 2.5vw;">SKILLS</span><br><br>
+				<b>PROGRAMMING LANGUAGES</b><br>
+					- Java<br>
+					- C and C++<br>
+					- Dart<br>
+					- Javascript<br><br>
+				<b>FRAMEWORKS</b><br>
+					- Flutter<br><br>
+				<b>TOOLS</b><br>
+					- Intelli J<br>
+					- Version Control (Git)<br>
+					- Linux<br>
+					- Figma (Design)<br><br>
+				<b>DATABASE PROJECTS</b><br>
+					- Sqlite<br>
+					- Firebase<br>
+			</div>
+
+			<div class="grid-item" id="objective">
+				<span style="font-size: 2.5vw;">OBJECTIVE</span><br><br>
+					I want to work in a positive and ever-growing technical
+					environment. I expect to work with a company that appreciates
+					innovation so that I can enhance my knowledge and skills to
+					give my best for the growth of the company.
+			</div>
+
+			<div class="grid-item" id="experience">
+				<span style="font-size: 2.5vw;">EXPERIENCE</span><br><br>
+					<span style="font-size: 1.4vw;font-weight: bold;">APP DEVELOPMENT INTERN</span><br>
+					Company: Arking Infotech<br>
+					Timeline: 20Aug 2020 - 30Aug 2020<br>
+					A 2-month internship as an App Development intern(Work from home).
+					Working with Flutter on an Airbnb like app.
+			</div>
+
+			<div class="grid-item" id="education">
+				<span style="font-size: 2.5vw;">EDUCATION</span><br><br>
+				<b>Silicon Institute of Technology,Bhubaneshwar, Odisha</b><br>
+					8.13 CGPA(upto 7th sem)<br>
+					B.Tech. (CSE)<br>
+					2017 - 2021<br><br>
+				<b>Ramakrishna Mission Vidyapith, Deoghar, Jharkhand</b><br>
+					70% CBSE<br>
+					2015 - 2017<br><br>
+				<b>St. Francis School, Deoghar, Jharkhand</b><br>
+					92.3% ICSE<br>
+					2003 - 2015<br><br>
+			</div>
+
+			<div class="grid-item" id="projects">
+				<span style="font-size: 2.5vw;">PROJECTS</span><br><br>
+					<span style="font-size: 1.4vw;font-weight: bold;">FIRST HARVESTS</span><br>
+					Play Store Link: <a href="https://play.google.com/store/apps/details?id=com.first_harvests.first_harvests" style="color: black;">First_harvests</a><br>
+					Company: First Harvests<br>
+					Timeline: 18 July 2020 - 8 Sep 2020<br>
+					An E-Commerce app for growing start-up named First Harvests.
+					The start-up delivers fresh fruits and vegetables to the customers directly from the farm, eliminating the middle-men.<br><br>
+
+					<span style="font-size: 1.4vw;font-weight: bold;">WALLSKY - A WALLPAPER APP</span><br>
+					Github Link: <a href="https://github.com/varamsky/wallsky" style="color: black;">https://github.com/varamsky/wallsky</a><br>
+					Timeline: 18 July 2020 - 8 Sep 2020<br>
+					A wallpaer app made with Flutter.
+					Browse wallpaers from varies sources flaunting amazing pictures namely, Unsplash, Pexels and Pixabay.
+					It required the implementation of data collection and presentation from the APIs of the above listed websites.<br><br>
+
+
+					<span style="font-size: 1.4vw;font-weight: bold;">NEWS APP</span><br>
+					Github Link: <a href="https://github.com/varamsky/news" style="color: black;">https://github.com/varamsky/news</a><br>
+					Timeline: March 2020 - April 2020<br>
+					A news app made with Flutter.
+					Browse news from around the world.
+					It required the implementation of data collection and presentation from the newsapi.org API service.
+			</div>
+
+			<div class="grid-item" id="interests">
+				<span style="font-size: 2.5vw;">INTERESTS</span><br><br>
+					 - Music<br>
+					 - Books<br>
+					 - Spanish<br>
+			</div>
+		</div>
+	</body>
+</html>

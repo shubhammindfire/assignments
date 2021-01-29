@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!-- Re-creating the dashboard page using Bootstrap -->
+
+<html>
+
+<head>
+	<title>Dashboard Bootstrap</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+	<style>
+		body {
+			font-family: 'Poppins', sans-serif;
+			background-color: #f4f5f8;
+		}
+
+		label {
+			font-size: small;
+		}
+
+
+		/* table starts here*/
+		table {
+			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			text-align: center;
+			border: 2px solid #eeeeee;
+			padding: 10px;
+		}
+
+		tr:first-child th {
+			border-top: 0px;
+		}
+
+		tr:last-child td {
+			border-bottom: 0px;
+		}
+
+		tr td:first-child,
+		tr th:first-child {
+			border-left: 0px;
+		}
+
+		tr td:last-child,
+		tr th:last-child {
+			border-right: 0px;
+		}
+	</style>
+</head>
+
+<body class="container-fluid p-3">
+	<div class="d-flex justify-content-between">
+		<div class="font-weight-bold" style="font-size: 2rem;">
+			<i class="fas fa-history" style="color: grey;"></i>
+			Invoice
+		</div>
+		<div>
+			<i class="fas fa-cog" style="font-size: x-large;color: grey;padding-right: 10px;"></i>
+			<i class="far fa-question-circle" style="font-size: x-large;color: grey;padding-right: 5px;"></i>
+			<span class="text-secondary">Help</span>
+			<i class="fas fa-times" style="font-size: x-large;color: grey;padding-left: 15px;"></i>
+		</div>
+	</div>
+
+
+	<!-- Grid starts here-->
+	<div class="container-fluid">
+		<form action="#">
+			<!-- Row 1 -->
+			<div class="row my-5">
+				<div class="col-md-3">
+					<label for="customer" class="font-weight-bold">Customer</label>
+					<i class="far fa-question-circle" style="font-size: 18px;color: grey;" class="pr-1 mr-3"></i>
+					<input type="text" name="text" id="text" class="form-control" placeholder="Select a customer">
+				</div>
+
+				<div class="col-md-3">
+					<label for="customer" class="font-weight-bold">Customer email</label>
+					<i class="far fa-question-circle" style="font-size: 18px;color: grey;" class="pr-1 mr-3"></i>
+					<input type="text" name="text" id="text" class="form-control"
+						placeholder="Separate emails with comma">
+
+					<div class="d-flex justify-content-between mt-2 md-4">
+						<span>
+							<input type="checkbox" name="send-later" id="send-later">
+							<label for="send-later" style="font-size: small;">Send later</label>
+							<i class="far fa-question-circle" style="font-size: 18px;color: grey;"></i>
+						</span>
+						<span class="text-primary" style="font-size: small;">
+							Cc/Bcc
+						</span>
+					</div>
+				</div>
+
+				<div class="col text-right">
+					<span class="text-secondary font-weight-bold" style="font-size: small;">BALANCE DUE</span>
+					<p class="h1 font-weight-bold">$0.00</p>
+				</div>
+			</div>
+
+
+			<!-- Row 2 -->
+			<div class="row mt-5">
+				<div class="col-md-2">
+					<label for="billing-address" class="font-weight-bold">Billing address</label>
+					<textarea name="billing" id="billing" cols="10" rows="3"></textarea>
+				</div>
+
+				<div class="col-md-2">
+					<label for="terms" class="font-weight-bold">Terms</label>
+					<input type="text" name="text" id="text" class="form-control" placeholder="Net 30">
+				</div>
+
+				<div class="col-md-2">
+					<label for="invoice-date" class="font-weight-bold">Invoice date</label>
+					<input type="text" name="text" id="text" class="form-control" placeholder="01/21/2021">
+
+					<span class="text-primary" style="font-size: small;">
+						Create recurring invoice
+					</span>
+				</div>
+
+				<div class="col-md-2">
+					<label for="due-date" class="font-weight-bold">Due date</label>
+					<input type="text" name="text" id="text" class="form-control" placeholder="02/20/2021">
+				</div>
+
+
+				<div class="col-md-4 text-left">
+					<label for="customer" class="font-weight-bold">Location of sale</label>
+					<input type="text" name="text" id="text" class="form-control"
+						placeholder="123 Sierra Way, San Pablo, CA">
+				</div>
+			</div>
+
+
+			<!-- Row 3 -->
+			<div class="row align-items-center">
+				<div class="col-md-2">
+					<span class="text-primary" style="font-size: medium;">
+						+ Shipping information
+					</span>
+				</div>
+
+				<div class="col-md-2">
+					<label for="crew" class="font-weight-bold">Crew #</label>
+					<input type="text" name="text" id="text" class="form-control">
+				</div>
+			</div>
+
+
+			<!-- Row 4 -->
+			<div class="row my-2">
+				<div class="col-md-7">
+					<div class="d-flex justify-content-between">
+						<span>
+							<label for="tags" class="font-weight-bold">Tags</label>
+							<i class="far fa-question-circle" style="font-size: 18px;color: grey;"></i>
+						</span>
+						<span class="text-primary" style="font-size: small;">
+							Manage tags
+						</span>
+					</div>
+					<input type="text" name="text" id="text" class="form-control"
+						placeholder="Start typing to add a tag">
+				</div>
+			</div>
+
+			<!--Table starts here-->
+			<div class="table-responsive mt-5 p-4" style="margin-bottom: 100px;background-color: white;">
+				<table class="table-striped p-4" style="width: 100%;background-color: white;">
+					<thead>
+						<th></th>
+						<th>#</th>
+						<th>
+							PRODUCT/SERVICE
+							<i class="far fa-question-circle" style="font-size: 18px;color: grey;"></i>
+						</th>
+						<th>DESCRIPTION</th>
+						<th>QTY</th>
+						<th>RATE</th>
+						<th>AMOUNT</th>
+						<th>TAX</th>
+						<th></th>
+					</thead>
+					<tr>
+						<td>
+							<i class="fas fa-ellipsis-h" style="font-size: 18px;color: grey;"></i>
+						</td>
+						<td>1</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<i class="fas fa-trash-alt" style="font-size: 18px;color: grey;"></i>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<i class="fas fa-ellipsis-h" style="font-size: 18px;color: grey;"></i>
+						</td>
+						<td>2</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<i class="fas fa-trash-alt" style="font-size: 18px;color: grey;"></i>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<i class="fas fa-ellipsis-h" style="font-size: 18px;color: grey;"></i>
+						</td>
+						<td>3</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<i class="fas fa-trash-alt" style="font-size: 18px;color: grey;"></i>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<i class="fas fa-ellipsis-h" style="font-size: 18px;color: grey;"></i>
+						</td>
+						<td>4</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<i class="fas fa-trash-alt" style="font-size: 18px;color: grey;"></i>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<i class="fas fa-ellipsis-h" style="font-size: 18px;color: grey;"></i>
+						</td>
+						<td>5</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<i class="fas fa-trash-alt" style="font-size: 18px;color: grey;"></i>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+
+		</form>
+	</div>
+
+
+
+	<!-- Footer starts here-->
+	<div id="footer" class="fixed-bottom d-flex justify-content-between p-2" style="background-color: #393a3d;">
+		<div id="footer-left">
+			<button type="button" class="btn btn-outline-light rounded-pill">Cancel</button>
+			<button type="button" class="btn btn-outline-light rounded-pill">Clear</button>
+		</div>
+
+		<span id="footer-middle" class="my-auto" style="color:#eeeeee;">
+			<span>Print or Preview</span>
+			<span class="px-1 border-left"></span>
+			<span>Make recurring</span>
+			<span class="px-1 border-left"></span>
+			<span>Customize</span>
+		</span>
+
+		<div id="footer-right">
+			<button type="button" class="btn btn-outline-light rounded-pill">Save</button>
+			<button type="button" class="btn btn-success rounded-pill">Save and send</button>
+		</div>
+	</div>
+</body>
+
+</html>
