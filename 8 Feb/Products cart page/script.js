@@ -108,7 +108,7 @@ If total amount >= 1000, Shipping charges = 0 */
 
     if(finalQuantity === 1)
         finalShipping = 50;
-    else if(finalPrice >= 1000)
+    else if(finalPrice >= 1000 || finalQuantity === 0)
         finalShipping = 0;
     else
         finalShipping = 25;
