@@ -1,0 +1,178 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #ececef;
+}
+
+.grid-container{
+    display: grid;
+}
+
+#row1{
+    display: grid;
+    padding: 2% 15%;
+    background-image: linear-gradient(to right,#5c3932, #441d3b);
+    color: white;
+    grid-template-columns: auto auto;
+}
+
+.grid-item{
+    display: inline;
+}
+
+#head-img{
+    float: right;
+}
+
+#head{
+    font-size: xx-large;
+}
+
+#sub-head{
+    font-size: medium;
+}
+
+#row2,#row3{
+    display: grid;
+    padding: 2% 15%;
+    grid-template-columns: auto auto auto;
+}
+
+.wired-logo{
+    float: right;
+}
+
+#row2 .grid-item{
+    padding: 2%;
+    margin: 0% 5%;
+    color: #909eb1;
+    font-weight: bold;
+    font-family: serif;
+}
+
+/* card */
+#row3 .grid-item{
+    background-color: white;
+    margin: 0% 5%;
+    padding: 8% 2%;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.card-image{
+    color: gray;
+    font-size: 70px;
+}
+
+.card-head{
+    font-weight: bold;
+}
+
+.card-button{
+    background-color: #6091cc;
+    color: white;
+    border: none;
+    padding: 2%;
+    border-radius: 3px;
+}
+
+#row4{
+    background-color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 1%;
+}
+
+#ad-button{
+    background-color: #ff5b00;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    margin-left: 1%;
+}
+
+#row5{
+    display: grid;
+    grid-template-columns: auto;
+    padding: 2% 15% 0%;
+}
+
+hr{
+    border: none;
+    height: 2px;
+    background: black;
+}
+
+#row6{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 2% 15%;
+}
+
+.testimonial{
+    text-align: center;
+}
+
+.avatar{
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.testimonial-bubble{
+    background-color: white;
+    margin: 0% 5%;
+    padding: 8% 2%;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.pointer {
+	height: 20px;
+	width: 20px;
+	background: white;
+	margin: 0 auto;
+	transform: rotate(45deg);
+	border-radius: 5px 0 0 0;
+	margin-top: 22px;
+    margin-bottom: -10px;
+	position: relative;
+	left: 0.5vw;
+}
+
+
+@media screen and (max-width: 750px){
+    #row1{
+        grid-template-columns: auto;
+    }
+
+    #head-img{
+        float:none;
+        margin-top: 10%;
+        width: 90%;
+    }
+
+    #row2,#row3,#row6{
+        grid-template-columns: auto;
+    }
+
+    #row4{
+        padding: 15px 0;
+    }
+
+    /* card */
+    #row3 .grid-item{
+        margin: 5%;
+    }
+
+    #ad-button{
+        margin-top: 1%;
+    }
+
+    .testimonial{
+        margin-top: 5%;
+    }
+}
