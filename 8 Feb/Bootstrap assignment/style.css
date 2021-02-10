@@ -1,0 +1,80 @@
+
+.container-fluid{
+    background-color: #f4f4f4;
+}
+
+#top-bar{
+    color: #a1a1a1;
+}
+
+#cart{
+    color: #676ecd;
+}
+
+a{
+    color: #a1a1a1;
+}
+
+#navbar{
+    background-color: #f4f4f4;
+    font-size: medium;
+}
+
+li{
+    padding: 1rem;
+    cursor: pointer;
+}
+
+li:hover{
+    background-color: #676ecd;
+    color: white;
+}
+
+.card{
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#card1{
+    background-color: #676ecd;
+}
+
+#card2{
+    background-color: #f8f100;
+}
+
+#card3{
+    background-color: #fb7664;
+}
+
+#card4{
+    background-color: #50c2c4;
+}
+
+#card1:hover,#card2:hover,#card3:hover,#card4:hover{
+    background-color: gold;
+}
+
+
+@media screen and (max-width: 750px){
+    .card-img-top{
+        height: 400px;
+    }
+
+    .co-logo{
+        height: 80px;
+        width: auto;
+    }
+
+    .d-block{
+        height: 300px;
+        width: auto;
+    }
+
+    .carousel-indicators li{
+        height: auto;
+        width: auto;
+    }
+}
