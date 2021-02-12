@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- AJAX assignment -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX assignment</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        tr:hover{
+            background-color: #dddddd;
+        }
+
+        table {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- This this will show individual row data separately -->
+    <div id="data"></div>
+
+    <!-- This button triggers the AJAX in JS -->
+    <button type="button" onclick="loadData()">Click to fetch data in tabular format</button>
+
+    <p>In the table, click on any row to view it's data separately</p>
+
+    <!-- This div will contain the table with all the API data -->
+    <div id="table"></div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
