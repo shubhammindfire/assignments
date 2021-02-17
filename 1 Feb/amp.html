@@ -9,7 +9,7 @@
 	<!-- This canonical should point to this same page or else to a non-amp version of this page -->
 	<!-- This helps in linking of the two versions of the page and eventually in the Google search -->
 	<link rel="canonical" href="#">
-	
+
 	<meta name="viewport" content="width=device-width">
 	<style amp-boilerplate>
 		body {
@@ -81,18 +81,20 @@
 	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 	<script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://kit.fontawesome.com/c241bf07f4.js" crossorigin="anonymous"></script>
 	<style amp-custom>
 		body {
-			padding: 1rem;
+			padding: 2rem;
 			background-color: #fdffdc;
 			font-family: sans-serif;
-		}
-
-		#content {
 			margin: auto;
 			max-width: 90%;
 		}
+
+		/*#content {
+			margin: auto;
+			max-width: 90%;
+		}*/
 
 		ul li a {
 			cursor: pointer;
@@ -106,58 +108,56 @@
 </head>
 
 <body>
-	<div id="content">
 
 
-		<i class="fas fa-bars" style="cursor: pointer;" on="tap:sidebar"></i>
-		<amp-sidebar id="sidebar" layout="nodisplay" side="left" style="padding: 1rem;">
-			<span on="tap:sidebar.close" style="cursor: pointer;">&times;</span>
-			<ul>
-				<li><a href="#whoami">Who am I?</a></li>
-				<li><a href="#photos">Photos</a></li>
-				<li><a href="#videos">Videos</a></li>
-			</ul>
-		</amp-sidebar>
+	<i class="fas fa-bars" style="cursor: pointer;" on="tap:sidebar"></i>
+	<amp-sidebar id="sidebar" layout="nodisplay" side="left" style="padding: 2rem;">
+		<span on="tap:sidebar.close" style="cursor: pointer;">&times;</span>
+		<ul>
+			<li><a href="#whoami">Who am I?</a></li>
+			<li><a href="#photos">Photos</a></li>
+			<li><a href="#videos">Videos</a></li>
+		</ul>
+	</amp-sidebar>
 
 
-		<h1>
-			Hi, this is Downey!
-		</h1>
-		<amp-img src="https://theindependent.sg/wp-content/uploads/2019/08/rdj.png" alt="downey" height="350"
-			width="300" layout="intrinsic"></amp-img>
+	<h1>
+		Hi, this is Downey!
+	</h1>
+	<amp-img src="https://theindependent.sg/wp-content/uploads/2019/08/rdj.png" alt="downey" height="350" width="300"
+		layout="intrinsic"></amp-img>
 
 
-		<h1 id="whoami">Really, Who am I?</h1>
-		<p>Genius, billionaire, playboy, philanthropist.</p><br><br>
+	<h1 id="whoami">Really, Who am I?</h1>
+	<p>Genius, billionaire, playboy, philanthropist.</p><br><br>
 
-		<amp-img src="https://i.pinimg.com/originals/09/d3/44/09d3446b39510aa9af37763f487b6e59.jpg" alt="downey"
-			height="650" width="400" layout="intrinsic"></amp-img>
+	<amp-img src="https://i.pinimg.com/originals/09/d3/44/09d3446b39510aa9af37763f487b6e59.jpg" alt="downey"
+		height="650" width="400" layout="intrinsic"></amp-img>
 
-		<p>
-			Steve Rogers : Big man in a suit of armour. Take that off, what are you?<br>
-			Tony Stark : Genius, billionaire, playboy, philanthropist.<br>
-		</p>
-
-
-		<h1 id="photos">Photos</h1>
-		<div>
-			<amp-carousel width="400" height="300" layout="responsive" type="slides">
-				<amp-img src="https://d23.com/app/uploads/2019/08/2019-disneylegend-rdj-1180x600.jpg" width="400"
-					height="300" layout="responsive" alt="a sample image"></amp-img>
-				<amp-img
-					src="https://static.toiimg.com/thumb/msid-68691282,imgsize-121917,width-800,height-600,resizemode-75/68691282.jpg"
-					width="400" height="300" layout="responsive" alt="a sample image"></amp-img>
-				<amp-img src="https://www.indiewire.com/wp-content/uploads/2020/10/sherlock-holmes.png" width="400"
-					height="300" layout="responsive" alt="a sample image"></amp-img>
-			</amp-carousel>
-		</div>
+	<p>
+		Steve Rogers : Big man in a suit of armour. Take that off, what are you?<br>
+		Tony Stark : Genius, billionaire, playboy, philanthropist.<br>
+	</p>
 
 
-		<h1 id="videos">Videos</h1>
-		<amp-youtube data-videoid="2G-B5upjLjM" layout="responsive" width="480" height="270"></amp-youtube>
-
-
+	<h1 id="photos">Photos</h1>
+	<div>
+		<amp-carousel width="400" height="300" layout="responsive" type="slides">
+			<amp-img src="https://d23.com/app/uploads/2019/08/2019-disneylegend-rdj-1180x600.jpg" width="400"
+				height="300" layout="responsive" alt="a sample image"></amp-img>
+			<amp-img
+				src="https://static.toiimg.com/thumb/msid-68691282,imgsize-121917,width-800,height-600,resizemode-75/68691282.jpg"
+				width="400" height="300" layout="responsive" alt="a sample image"></amp-img>
+			<amp-img src="https://www.indiewire.com/wp-content/uploads/2020/10/sherlock-holmes.png" width="400"
+				height="300" layout="responsive" alt="a sample image"></amp-img>
+		</amp-carousel>
 	</div>
+
+
+	<h1 id="videos">Videos</h1>
+	<amp-youtube data-videoid="2G-B5upjLjM" layout="responsive" width="480" height="270"></amp-youtube>
+
+
 
 </body>
 
