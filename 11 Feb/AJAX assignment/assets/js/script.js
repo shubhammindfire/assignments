@@ -1,9 +1,21 @@
 "use strict";
 
+// This function triggers function loadData() on pagination clicks
+$('li').click(function(){
+    // call loadData() with it's userId. This returns 10 JSON objects at a time
+    loadData($(this).text());
+
+    // The next 2 lines handle activation and deactivation of pagination links
+    $('li').removeClass("active");
+    $(this).addClass("active");
+});
+
 // This function shows all the API data in tabular format
-function loadData() {
+function loadData(userId) {
+    // show "Please wait.." while the data is being loaded from the API
+    document.getElementById("table").innerHTML = "<p>Please wait..</p>";
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/posts?userId=" + userId, true);
     xhr.send();
     xhr.onload = function () {
         if (this.status == 200) {
@@ -34,18 +46,21 @@ function loadData() {
             document.getElementById("table").innerHTML = html;
         }
     };
+
+    // Initially #pagination is hidden
+    $('#pagination').show();
 }
 
 // This function shows the individual data in a modal
-function getIndividualData(id){
+function getIndividualData(id) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/"+id, true);
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/" + id, true);
     xhr.send();
     xhr.onload = function () {
         if (this.status == 200) {
             // parsing json data received as response from the API
             let json = JSON.parse(this.responseText);
-            
+
             document.getElementById("json-body").innerHTML = json.body;
         }
     };
@@ -59,6 +74,6 @@ document.getElementById("myModal").addEventListener('hide.bs.modal',function(){
 */
 
 // Changing modal body to "Please wait" everytime modal is closed
-$("#myModal").on('hide.bs.modal', function(){
+$("#myModal").on('hide.bs.modal', function () {
     document.getElementById("json-body").innerHTML = "Please wait...";
 });

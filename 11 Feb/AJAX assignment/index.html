@@ -17,13 +17,27 @@
 
 <body class="container">
     <!-- This button triggers the AJAX in JS -->
-    <button type="button" class="btn btn-primary p-2 my-2" onclick="loadData()">Click to fetch data in tabular
+    <button type="button" class="btn btn-primary p-2 my-2" onclick="loadData(1)">Click to fetch data in tabular
         format</button>
 
     <p>In the table, click on any row to view it's data separately in a modal</p>
 
     <!-- This div will contain the table with all the API data -->
     <div id="table"></div>
+
+    <!-- Add pagination to the page -->
+    <ul class="justify-content-center pagination" id="pagination" style="display: none;">
+        <li class="page-item active"><a class="page-link">1</a></li>
+        <li class="page-item"><a class="page-link">2</a></li>
+        <li class="page-item"><a class="page-link">3</a></li>
+        <li class="page-item"><a class="page-link">4</a></li>
+        <li class="page-item"><a class="page-link">5</a></li>
+        <li class="page-item"><a class="page-link">6</a></li>
+        <li class="page-item"><a class="page-link">7</a></li>
+        <li class="page-item"><a class="page-link">8</a></li>
+        <li class="page-item"><a class="page-link">9</a></li>
+        <li class="page-item"><a class="page-link">10</a></li>
+    </ul>
 
     <!-- The Modal -->
     <div class="modal fade" id="myModal">
@@ -50,6 +64,7 @@
         </div>
     </div>
 
+    <!-- This is to link external JS file -->
     <script src="assets/js/script.js"></script>
 </body>
 
