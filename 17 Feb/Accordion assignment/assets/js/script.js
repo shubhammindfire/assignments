@@ -1,7 +1,7 @@
 // create an accordion using jQuery
 
-// this function handles working of accordion where multiple flaps can remain open at a time
 $(document).ready(function () {
+    // this function handles working of accordion where multiple flaps can remain open at a time
     $('.toggle1').click(function () {
         var textElement = $(this).parent().find('.text1');
         textElement.slideToggle();
@@ -12,11 +12,8 @@ $(document).ready(function () {
         else
             iconElement.removeClass('fa-chevron-up').addClass('fa-chevron-down');
     });
-});
 
-
-// this function handles working of accordion where only one flap can remain open at a time
-$(document).ready(function () {
+    // this function handles working of accordion where only one flap can remain open at a time
     $('.toggle2').click(function () {
         var textElement = $(this).parent().find('.text2');
         var iconElement = $(this).find('i');
