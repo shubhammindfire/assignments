@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- Form validation assignment -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation assignment</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container p-4">
+        <h2>Registration Form</h2>
+
+        <form class="needs-validation" novalidate>
+            <!-- username -->
+            <div class="form-group">
+                <label for="uname">Username:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                <div class="valid-feedback" id="uname-valid">Valid.</div>
+                <div class="invalid-feedback" id="uname-invalid">Please fill out this field.</div>
+            </div>
+            <!-- password -->
+            <div class="form-group">
+                <label for="pass">Password:</label>
+                <input type="text" class="form-control" id="pass" placeholder="Enter password" name="pass" required>
+                <div class="valid-feedback" id="pass-valid">Valid.</div>
+                <div class="invalid-feedback" id="pass-invalid">Please fill out this field.</div>
+            </div>
+            <!-- confirm password -->
+            <div class="form-group">
+                <label for="confirm-pass">Confirm password:</label>
+                <input type="text" class="form-control" id="confirm-pass" placeholder="Re-enter password to confirm"
+                    name="confirm-pass" required>
+                <div class="valid-feedback" id="cpass-valid">Valid.</div>
+                <div class="invalid-feedback" id="cpass-invalid">Please fill out this field.</div>
+            </div>
+
+            <!-- gender -->
+            <div class="form-group">
+                <label for="gender">Gender:</label><br>
+                <div class="form-check-inline">
+                    <label class="form-check-label" for="male">
+                        <input type="radio" class="form-check-input" id="male" name="optradio" value="male" checked>Male
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label" for="female">
+                        <input type="radio" class="form-check-input" id="female" name="optradio" value="female">Female
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label class="form-check-label" for="others">
+                        <input type="radio" class="form-check-input" id="others" name="optradio" value="others">Others
+                    </label>
+                </div>
+            </div>
+
+            <!-- I agree -->
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="iagree" id="iagree" required> I agree on all
+                    the
+                    conditions
+                    <div class="valid-feedback" id="agree-valid">Valid.</div>
+                    <div class="invalid-feedback" id="agree-invalid">Check this checkbox to continue.</div>
+                </label>
+            </div>
+
+            <!-- submit -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
