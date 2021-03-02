@@ -42,7 +42,15 @@ function Search() {
         let userInfo = document.getElementById('user-info');
         let errorText = document.getElementById('error-text');
 
-        console.log(`user = ${user}`);
+        // updating login as user 
+        // I tried "jfie", which exists
+        // then I tried "jfiee", which doesn't exist
+        // then I tried "jfie" again and this time it didn't work
+        // because login was still "jfie" and now user === login was true so no search was made
+        // so, here I change login to user each time something is searched
+        updateLogin(user);
+
+        console.log(`user = ${user} and login = ${login}`);
         if (user === '' || user === null) {
             console.log(`Empty user. user = ${user}`);
             errorText.innerHTML = `
@@ -90,12 +98,12 @@ function Search() {
     return (
         <div style={{ fontSize: "20px" }}>
             <form action="#" onSubmit={handleSearch}>
-            <input id='text-field' placeholder="Enter a username to search.." value={user} onChange={(ev) => { document.getElementById('error-text').innerHTML = ''; changeUser(ev.target.value); }} type='text' autoFocus />
-            <button style={{ marginLeft: "20px" }}>Search</button>
-            {/*used to display error texts, if any*/}
-            <div id='error-text'></div>
-            {/*used to display user info, if available*/}
-            <div id='user-info'></div>
+                <input id='text-field' placeholder="Enter a username to search.." value={user} onChange={(ev) => { document.getElementById('error-text').innerHTML = ''; changeUser(ev.target.value); }} type='text' autoFocus />
+                <button style={{ marginLeft: "20px" }}>Search</button>
+                {/*used to display error texts, if any*/}
+                <div id='error-text'></div>
+                {/*used to display user info, if available*/}
+                <div id='user-info'></div>
             </form>
         </div>
     );
