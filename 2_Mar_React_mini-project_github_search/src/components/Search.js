@@ -38,11 +38,21 @@ function Search() {
         return html;
     }
 
-    function handleSearch() {
-        if (login !== user) {
+    function handleSearch(event) {
+        let userInfo = document.getElementById('user-info');
+        let errorText = document.getElementById('error-text');
+
+        console.log(`user = ${user}`);
+        if (user === '' || user === null) {
+            console.log(`Empty user. user = ${user}`);
+            errorText.innerHTML = `
+            <div style="color: red;">Input field is empty</div>
+            `;
+            // removing the previous user results
+            userInfo.innerHTML = '';
+        }
+        else if (login !== user) {
             // if login !== user only then a new API call is made
-            let userInfo = document.getElementById('user-info');
-            let errorText = document.getElementById('error-text');
             console.log('Clicked on search with user=' + user);
 
             const regex = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
@@ -74,17 +84,18 @@ function Search() {
                     });
             }
         }
+        event.preventDefault();
     }
 
     return (
         <div style={{ fontSize: "20px" }}>
-            <form action="#">
-                <input id='text-field' placeholder="Enter a username to search.." value={user} onChange={(ev) => { document.getElementById('error-text').innerHTML = ''; changeUser(ev.target.value); }} type='text' autoFocus />
-                <button style={{ marginLeft: "20px" }} type="submit" onClick={handleSearch}>Search</button>
-                {/*used to display error texts, if any*/}
-                <div id='error-text'></div>
-                {/*used to display user info, if available*/}
-                <div id='user-info'></div>
+            <form action="#" onSubmit={handleSearch}>
+            <input id='text-field' placeholder="Enter a username to search.." value={user} onChange={(ev) => { document.getElementById('error-text').innerHTML = ''; changeUser(ev.target.value); }} type='text' autoFocus />
+            <button style={{ marginLeft: "20px" }}>Search</button>
+            {/*used to display error texts, if any*/}
+            <div id='error-text'></div>
+            {/*used to display user info, if available*/}
+            <div id='user-info'></div>
             </form>
         </div>
     );
