@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Button } from "reactstrap";
 
 // TODO: USE useEffect() hook as suggested by Sobhan
-// TODO: USE ReactStrap
 function Search() {
     // https://api.github.com/users/
 
@@ -112,7 +112,7 @@ function Search() {
                     type="text"
                     autoFocus
                 />
-                <button style={{ marginLeft: "20px" }}>Search</button>
+                <Button color='primary' style={{ marginLeft: "20px" }}>Search</Button>
 
                 {/*used to display error texts, if any*/}
                 <div style={{ color: "red" }}>{errorText}</div>
