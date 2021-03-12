@@ -17,7 +17,7 @@ function AlbumCard(props) {
     } else if (type === SPOTIFY_TYPES.RECENTLY_PLAYED) {
         image_url = capitalize(album.track.album.images[1].url);
         album_type = capitalize(album.track.album.album_type);
-        album_name = capitalize(album.track.album.name);
+        album_name = capitalize(album.track.name);
         album.track.album.artists.forEach((element) => {
             artist_name += `${element.name}, `;
         });

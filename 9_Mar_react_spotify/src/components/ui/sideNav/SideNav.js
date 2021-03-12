@@ -4,11 +4,15 @@ import NavListItem from "./NavListItem.js";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusic from "@material-ui/icons/LibraryMusic";
-import Playlists from './Playlists.js';
+import Playlists from "./Playlists.js";
 
 function SideNav() {
     return (
-        <div>
+        <div
+            style={{
+                position: "fixed",
+            }}
+        >
             <img
                 className="mx-2 my-4"
                 width="auto"
