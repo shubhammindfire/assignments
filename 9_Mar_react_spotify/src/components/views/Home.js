@@ -9,6 +9,10 @@ import {
 } from "./../../redux/album/albumActions.js";
 import { addUserInfo } from "./../../redux/user/userActions.js";
 import {
+    addUserPlaylist,
+    addUserPlaylistImage,
+} from "./../../redux/userPlaylist/userPlaylistActions.js";
+import {
     addCurrentSong,
     addCurrentImageUrl,
     addCurrentArtist,
@@ -31,6 +35,28 @@ function Home(props) {
                 // console.log(`playlists = ${JSON.stringify(playlists.items)}`);
                 dispatch(addUserPlaylists(playlists.items));
             });
+
+            // TODO move this block to separate part for playlist details
+            spotify
+                .getPlaylistTracks("4LwZWlGYMpFibXEBera3Et")
+                .then((tracks) => {
+                    console.log(
+                        `user playlist image URL = ${JSON.stringify(
+                            tracks.items
+                        )}`
+                    );
+                    dispatch(addUserPlaylist(tracks.items));
+                });
+
+            // TODO move this block to separate part for playlist details
+            spotify
+                .getPlaylistCoverImage("4LwZWlGYMpFibXEBera3Et")
+                .then((playlistImage) => {
+                    console.log(
+                        `user playlist = ${JSON.stringify(playlistImage)}`
+                    );
+                    dispatch(addUserPlaylistImage(playlistImage[1].url));
+                });
 
             spotify
                 .getMyCurrentPlayingTrack()
@@ -80,6 +106,7 @@ function Home(props) {
         // console.log("token = " + token);
     }, [dispatch, token, spotify]);
 
+    console.log(`spotify object = ${JSON.stringify(spotify)}`);
     return (
         <div>
             <div className="row">

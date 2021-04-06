@@ -3,6 +3,7 @@ import NavListItem from "./NavListItem";
 import AddIcon from "@material-ui/icons/Add";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function Playlists() {
     const userPlaylists = Array.from(
@@ -30,9 +31,14 @@ function Playlists() {
             {userPlaylists ? (
                 userPlaylists.map((element) => {
                     return (
-                        <div className="d-flex justify-content-start ml-5" style={{color: "#aeaeae"}}>
-                            {element.name}
-                        </div>
+                        <Link to="/playlist">
+                            <div
+                                className="d-flex justify-content-start ml-5"
+                                style={{ color: "#aeaeae" }}
+                            >
+                                {element.name}
+                            </div>
+                        </Link>
                     );
                 })
             ) : (
