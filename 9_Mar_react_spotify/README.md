@@ -42,6 +42,7 @@ To develop or test this app please follow the below steps:
 
 -   Make sure you have the `node` version as `14.17.2` and the `npm` version as `6.14.13`
 -   Clone the repo
--   Please get a spotify clientId by registering an app on spotify developer profile and add that in the `9_Mar_react_spotify/src/components/spotify/spotify_credentials.js` file
+-   Please get a spotify clientId by registering an app on spotify developer profile and add that in the `9_Mar_react_spotify/src/components/spotify/spotify_credentials.js` file as <br>
+    `export const clientId = "YOUR_CLIENT_ID";`
 -   Inside the repo run `npm install` and then `npm start` in the terminal
 -   This will lauch a new browser window where you can run and test the app
