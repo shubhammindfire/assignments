@@ -40,9 +40,9 @@ function PlaylistPage() {
                 </div>
             </div>
             {userPlaylist ? (
-                userPlaylist.map((element) => {
+                userPlaylist.map((element, index) => {
                     return (
-                        <div className="songRow">
+                        <div className="songRow" key={index}>
                             <img
                                 className="songRow_album"
                                 src={element.track.album.images[2].url}
@@ -63,35 +63,6 @@ function PlaylistPage() {
             ) : (
                 <p>null</p>
             )}
-
-            {/* <div>
-                {userPlaylist ? (
-                    userPlaylist.map((element) => {
-                        return (
-                            // {element.track.name} -{" "}
-                            // {element.track.artists[0].name}
-                            <div className="songRow">
-                                <img
-                                    className="songRow_album"
-                                    src={element.track.album.images[2].url}
-                                    alt=""
-                                />
-                                <div className="songRow_info">
-                                    <h1>{element.track.name}</h1>
-                                    <p>
-                                        {element.track.artists
-                                            .map((artist) => artist.name)
-                                            .join(", ")}{" "}
-                                        - {element.track.album.name}
-                                    </p>
-                                </div>
-                            </div>
-                        );
-                    })
-                ) : (
-                    <p>null</p>
-                )}
-            </div> */}
         </div>
     );
 }

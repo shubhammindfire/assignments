@@ -29,9 +29,9 @@ function Playlists() {
             />
             {/* User Playlists */}
             {userPlaylists ? (
-                userPlaylists.map((element) => {
+                userPlaylists.map((element, index) => {
                     return (
-                        <Link to="/playlist">
+                        <Link to="/playlist" key={index}>
                             <div
                                 className="d-flex justify-content-start ml-5"
                                 style={{ color: "#aeaeae" }}

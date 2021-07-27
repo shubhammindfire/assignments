@@ -5,10 +5,10 @@ import currentlyPlayingReducer from "./currentlyPlaying/currentlyPlayingReducer.
 import userPlaylistReducer from "./userPlaylist/userPlaylistReducer.js";
 
 const rootReducer = combineReducers({
-    albumReducer: albumReducer,
-    userReducer: userReducer,
-    currentlyPlayingReducer: currentlyPlayingReducer,
-    userPlaylistReducer: userPlaylistReducer,
+    albumReducer,
+    userReducer,
+    currentlyPlayingReducer,
+    userPlaylistReducer,
 });
 
 export default rootReducer;

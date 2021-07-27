@@ -7,7 +7,10 @@ function TopUserProfile() {
     const userInfo = useSelector((state) => state.userReducer.userInfo);
 
     return (
-        <div className="d-flex justify-content-end py-2 pr-5 text-white sticky-top" style={{backgroundColor: "black"}}>
+        <div
+            className="d-flex justify-content-end py-2 pr-5 text-white sticky-top"
+            style={{ backgroundColor: "black" }}
+        >
             <Button
                 className="py-1 px-4 mr-4 font-weight-bold rounded-pill"
                 style={{

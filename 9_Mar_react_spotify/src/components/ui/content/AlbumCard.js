@@ -1,6 +1,5 @@
 import React from "react";
 import { SPOTIFY_TYPES } from "../../spotify/spotify_types.js";
-// import { Card, CardImg, CardTitle, CardBody, CardSubtitle } from "reactstrap";
 
 function AlbumCard(props) {
     const { type, album } = props;
@@ -22,7 +21,6 @@ function AlbumCard(props) {
             artist_name += `${element.name}, `;
         });
         artist_name = artist_name.replace(/,\s*$/, "");
-        // artist_name = capitalize(album.artists[0].name);
     }
 
     function capitalize(st) {
@@ -69,18 +67,6 @@ function AlbumCard(props) {
                     }}
                 >
                     {album_type}
-                    {/* <div
-                        style={{
-                            display: "inline-block",
-                            width: "5px",
-                            height: "5px",
-                            borderRadius: "50%",
-                            background: "grey",
-                            marginBottom: "2px",
-                            marginLeft: "5px",
-                            marginRight: "5px",
-                        }}
-                    ></div> */}
                     <p
                         style={{
                             whiteSpace: "nowrap",
@@ -92,37 +78,6 @@ function AlbumCard(props) {
                     </p>
                 </div>
             </div>
-
-            {/* <Card
-                className="p-3 m-2"
-                style={{ color: "white", backgroundColor: "#141414", maxWidth: "100%" }}
-            >
-                <img
-                    src={album.images[1].url}
-                    width="150px"
-                    alt="album_image"
-                />
-                <CardBody>
-                    <CardTitle tag="h5" style={{wordWrap: "break-word"}}>{album.name}</CardTitle>
-                    <CardSubtitle tag="h6" className="mb-2 text-muted">
-                        {capitalize(album.album_type)}
-                        <div
-                            className="small-dot"
-                            style={{
-                                display: "inline-block",
-                                width: "5px",
-                                height: "5px",
-                                borderRadius: "50%",
-                                background: "grey",
-                                marginBottom: "2px",
-                                marginLeft: "5px",
-                                marginRight: "5px",
-                            }}
-                        ></div>
-                        {capitalize(album.artists[0].name)}
-                    </CardSubtitle>
-                </CardBody>
-            </Card> */}
         </div>
     ) : (
         <p>null</p>

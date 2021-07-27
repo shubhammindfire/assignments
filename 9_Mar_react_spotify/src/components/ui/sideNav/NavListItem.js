@@ -1,7 +1,6 @@
 import React from "react";
 
 function NavListItem(props) {
-    // const { icon, title } = props;
     const Icon = props.Icon;
     const title = props.title;
     const divClassName =

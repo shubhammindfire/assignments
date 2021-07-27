@@ -19,7 +19,6 @@ function AlbumArt() {
     });
     artists = artists.replace(/,\s*$/, "");
 
-    console.log(`USING useSelector currentSong = ${currentSong}`);
     return currentSong ? (
         <div>
             <div
@@ -60,7 +59,9 @@ function AlbumArt() {
                 </div>
             </div>
         </div>
-    ) : <div style={{width: "300px"}}></div>;
+    ) : (
+        <div style={{ width: "300px" }}></div>
+    );
 }
 
 export default AlbumArt;

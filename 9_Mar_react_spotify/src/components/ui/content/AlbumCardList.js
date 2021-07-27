@@ -4,17 +4,11 @@ import AlbumCard from "./AlbumCard.js";
 import { SPOTIFY_TYPES } from "../../spotify/spotify_types.js";
 
 function AlbumCardList() {
-    const newReleases = Array.from(useSelector((state) => state.albumReducer.newReleases));
+    const newReleases = Array.from(
+        useSelector((state) => state.albumReducer.newReleases)
+    );
     const recentlyPlayed = Array.from(
         useSelector((state) => state.albumReducer.recentlyPlayed)
-    );
-    console.log(
-        `in albumCardList: state newRelease = ${JSON.stringify(newReleases)} `
-    );
-    console.log(
-        `in albumCardList: state recentlyPlayed = ${JSON.stringify(
-            recentlyPlayed
-        )} `
     );
 
     return (
@@ -26,11 +20,14 @@ function AlbumCardList() {
             {newReleases ? (
                 newReleases.map((element) => {
                     return (
-                        <div className="d-inline-block p-0 m-0">
+                        <div
+                            className="d-inline-block p-0 m-0"
+                            key={element.name}
+                        >
                             <AlbumCard
                                 type={SPOTIFY_TYPES.NEW_RELEASES}
                                 album={element}
-                                key={element.id}
+                                key={element.name}
                             />
                         </div>
                     );
@@ -45,11 +42,14 @@ function AlbumCardList() {
             {newReleases ? (
                 recentlyPlayed.map((element) => {
                     return (
-                        <div className="d-inline-block p-0 m-0">
+                        <div
+                            className="d-inline-block p-0 m-0"
+                            key={element.track.name}
+                        >
                             <AlbumCard
                                 type={SPOTIFY_TYPES.RECENTLY_PLAYED}
                                 album={element}
-                                key={element.id}
+                                key={element.track.name}
                             />
                         </div>
                     );

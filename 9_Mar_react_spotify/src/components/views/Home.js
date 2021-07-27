@@ -17,7 +17,6 @@ import {
     addCurrentImageUrl,
     addCurrentArtist,
 } from "./../../redux/currentlyPlaying/currentlyPlayingActions.js";
-// import Footer from "../ui/footer/Footer2.js";
 import Footer from "../ui/footer/Footer.js";
 
 function Home(props) {
@@ -27,86 +26,49 @@ function Home(props) {
     useEffect(() => {
         if (token) {
             spotify.getMe().then((user) => {
-                // console.log(`user = ${JSON.stringify(user)}`);
                 dispatch(addUserInfo(user.display_name));
             });
 
             spotify.getUserPlaylists().then((playlists) => {
-                // console.log(`playlists = ${JSON.stringify(playlists.items)}`);
                 dispatch(addUserPlaylists(playlists.items));
             });
 
-            // TODO move this block to separate part for playlist details
             spotify
                 .getPlaylistTracks("4LwZWlGYMpFibXEBera3Et")
                 .then((tracks) => {
-                    console.log(
-                        `user playlist image URL = ${JSON.stringify(
-                            tracks.items
-                        )}`
-                    );
                     dispatch(addUserPlaylist(tracks.items));
                 });
 
-            // TODO move this block to separate part for playlist details
             spotify
                 .getPlaylistCoverImage("4LwZWlGYMpFibXEBera3Et")
                 .then((playlistImage) => {
-                    console.log(
-                        `user playlist = ${JSON.stringify(playlistImage)}`
-                    );
                     dispatch(addUserPlaylistImage(playlistImage[1].url));
                 });
 
             spotify
                 .getMyCurrentPlayingTrack()
                 .then((track) => {
-                    console.log(`API track = ${JSON.stringify(track)}`);
                     if (track !== {}) {
                         const currentSong = track.item.name;
                         const currentArtist = track.item.artists;
                         const currentImageUrl = track.item.album.images[2].url;
-                        console.log(`STATE currentSong = ${currentSong}`);
-                        console.log(
-                            `STATE currentArtists = ${JSON.stringify(
-                                currentArtist
-                            )}`
-                        );
-                        console.log(
-                            `STATE currentImageUrl = ${currentImageUrl}`
-                        );
                         dispatch(addCurrentSong(currentSong));
                         dispatch(addCurrentImageUrl(currentImageUrl));
                         dispatch(addCurrentArtist(currentArtist));
                     }
                 })
-                .catch((error) => {
-                    console.log(
-                        `spotify.getMyCurrentPlayingTrack() error: ${error}`
-                    );
-                });
+                .catch((error) => {});
 
             spotify.getMyRecentlyPlayedTracks({ limit: 6 }).then((releases) => {
-                // console.log(
-                //     `Recently Played = ${JSON.stringify(
-                //         releases.items[0].track.album.name
-                //     )}`
-                // );
                 dispatch(addRecentlyPlayed(releases.items));
             });
 
             spotify.getNewReleases({ limit: 6 }).then((releases) => {
-                // console.log(
-                //     `New Releases = ${JSON.stringify(releases.albums.items)}`
-                // );
                 dispatch(addNewReleases(releases.albums.items));
             });
         }
-
-        // console.log("token = " + token);
     }, [dispatch, token, spotify]);
 
-    console.log(`spotify object = ${JSON.stringify(spotify)}`);
     return (
         <div>
             <div className="row">
