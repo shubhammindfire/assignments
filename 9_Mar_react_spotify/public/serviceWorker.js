@@ -1,22 +1,20 @@
 let CACHE_NAME = "spotify-clone-app";
-const urlsToCache = ["/", "/index.html"];
-self.addEventListener("install", function (event) {
-    // Perform install steps
-    event.waitUntil(
-        caches.open(CACHE_NAME).then(function (cache) {
-            console.log("Opened cache");
-            return cache.addAll(urlsToCache);
-        })
-    );
-});
+self.addEventListener("install", function (event) {});
 
 self.addEventListener("fetch", function (event) {
-    event.respondWith(
-        caches.match(event.request).then(function (response) {
-            if (response) {
-                return response;
-            }
-            return fetch(event.request);
-        })
-    );
+    if (!/^https?:$/i.test(new URL(event.request.url).protocol)) return;
+    if (event.request.method === "GET") {
+        event.respondWith(
+            fetch(event.request)
+                .then((res) => {
+                    const resClone = res.clone();
+
+                    caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(event.request, resClone);
+                    });
+                    return res;
+                })
+                .catch((err) => caches.match(event.request).then((res) => res))
+        );
+    }
 });

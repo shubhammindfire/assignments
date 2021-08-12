@@ -44,7 +44,7 @@ function AlbumCardList() {
                     return (
                         <div
                             className="d-inline-block p-0 m-0"
-                            key={element.track.name}
+                            key={element.track.id}
                         >
                             <AlbumCard
                                 type={SPOTIFY_TYPES.RECENTLY_PLAYED}

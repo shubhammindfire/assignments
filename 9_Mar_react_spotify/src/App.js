@@ -1,6 +1,5 @@
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
-import "./App.css";
 import Home from "./components/views/Home.js";
 import React, { useEffect, useState } from "react";
 import Login from "./components/views/login/Login.js";
